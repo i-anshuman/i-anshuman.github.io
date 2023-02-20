@@ -22,6 +22,18 @@
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
+
+  --color-background: #020a17;
+  --color-primary: #00acc1;
+  --color-secondary: #e9305e;
+
+  --loader-background: var(--color-background);
+  --loader-color: var(--color-secondary);
+  --loader-neon-1: rgba(233, 48, 94, 0.1);
+  --loader-neon-2: rgba(233, 48, 94, 0.2);
+  --loader-neon-3: rgba(233, 48, 94, 0.3);
+  --loader-neon-4: rgba(233, 48, 94, 0.4);
+  --loader-neon-5: rgba(233, 48, 94, 0.5);
 }
 
 @media (prefers-color-scheme: light) {
