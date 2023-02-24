@@ -1,0 +1,62 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  z-index: 10;
+}
+
+.hamburger {
+  position: relative;
+  width: calc(var(--hamburger-width) * 3 / 4);
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: inline-block;
+  height: var(--hamburger-height);
+  border-radius: var(--hamburger-radius);
+  background-color: var(--color-secondary);
+  transition: all 500ms cubic-bezier(1, -0.7, 0, 1.7);
+  transform-origin: center center;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: " ";
+  position: absolute;
+}
+
+.hamburger::before {
+  width: var(--hamburger-width);
+  top: -8px;
+  right: 0;
+}
+
+.hamburger::after {
+  width: calc(var(--hamburger-width) * 1 / 2);
+  top: 8px;
+  right: 0;
+}
+
+.button:hover > .hamburger,
+.button:hover > .hamburger::after {
+  width: var(--hamburger-width);
+}
+
+.button__open .hamburger::before {
+  top: 0px;
+  transform: rotate(90deg);
+}
+
+.button__open .hamburger {
+  width: var(--hamburger-width);
+  transform: rotate(-45deg);
+}
+
+.button__open .hamburger::after {
+  top: 0px;
+  width: var(--hamburger-width);
+  opacity: 0;
+}
