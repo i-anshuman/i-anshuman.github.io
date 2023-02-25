@@ -2,12 +2,37 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 10px;
   z-index: 10;
+  position: relative;
+}
+
+.hambox {
+  position: relative;
+  width: var(--menu-button-side);
+  height: var(--menu-button-side);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hambox::before {
+  content: " ";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--sidenav-color);
+  z-index: -1;
+  transform: scale(0);
+  transition: var(--transition-hamburger);
 }
 
 .hamburger {
-  position: relative;
+  position: absolute;
   width: calc(var(--hamburger-width) * 3 / 4);
 }
 
@@ -18,7 +43,7 @@
   height: var(--hamburger-height);
   border-radius: var(--hamburger-radius);
   background-color: var(--color-secondary);
-  transition: all 500ms cubic-bezier(1, -0.7, 0, 1.7);
+  transition: var(--transition-hamburger);
   transform-origin: center center;
 }
 
@@ -40,8 +65,12 @@
   right: 0;
 }
 
-.button:hover > .hamburger,
-.button:hover > .hamburger::after {
+.button:hover > .hambox::before {
+  transform: scale(1.5);
+}
+
+.button:hover > .hambox > .hamburger,
+.button:hover > .hambox > .hamburger::after {
   width: var(--hamburger-width);
 }
 

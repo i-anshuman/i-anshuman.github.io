@@ -12,10 +12,12 @@ export default function Hamburger({ label, open, onClick }: ButtonProps) {
     <button
       type="button"
       aria-label={label}
-      className={`${styles.button} ${open && styles.button__open}`}
+      className={`${styles.button} ${open ? styles.button__open : ''}`}
       onClick={onClick}
     >
-      <span className={styles.hamburger}></span>
+      <div className={styles.hambox}>
+        <span className={styles.hamburger}></span>
+      </div>
     </button>
   );
 }
