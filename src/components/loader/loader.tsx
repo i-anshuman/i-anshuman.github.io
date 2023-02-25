@@ -1,11 +1,11 @@
 import styles from "@/styles/components/Loader.module.css";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 
 type LoaderProps = {
   show: boolean;
 };
 
-const outline = {
+const outline: Variants = {
   hidden: {
     opacity: 0,
     pathLength: 0,
@@ -19,7 +19,7 @@ const outline = {
   },
 };
 
-const initial = {
+const initial: Variants = {
   hidden: {
     opacity: 0,
     transform: "translate(26%, 100%) scale(0)",
@@ -33,9 +33,7 @@ const initial = {
   }),
 };
 
-export default function Loader(props: LoaderProps): JSX.Element {
-
-  const { show } = props;
+export default function Loader({show}: LoaderProps): JSX.Element {
 
   return (
     <AnimatePresence mode="wait">
