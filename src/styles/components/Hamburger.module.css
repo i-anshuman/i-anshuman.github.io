@@ -16,21 +16,6 @@
   align-items: center;
 }
 
-.hambox::before {
-  content: " ";
-  display: inline-block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: var(--sidenav-color);
-  z-index: -1;
-  transform: scale(0);
-  transition: var(--transition-hamburger);
-}
-
 .hamburger {
   position: absolute;
   width: calc(var(--hamburger-width) * 3 / 4);
@@ -65,9 +50,26 @@
   right: 0;
 }
 
+/*
+.hambox::before {
+  content: " ";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--sidenav-color);
+  z-index: -1;
+  transform: scale(0);
+  transition: var(--transition-hamburger);
+}
+
 .button:hover > .hambox::before {
   transform: scale(1.5);
 }
+*/
 
 .button:hover > .hambox > .hamburger,
 .button:hover > .hambox > .hamburger::after {
