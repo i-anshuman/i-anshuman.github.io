@@ -1,14 +1,13 @@
 .loader {
-  position: absolute;
+  position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: var(--loader-background);
-  z-index: 20;
+  z-index: var(--z-index-loader);
+  display: grid;
+  place-content: center;
 }
 
 .loader > svg.icon {
