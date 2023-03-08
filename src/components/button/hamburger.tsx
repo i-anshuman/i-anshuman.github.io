@@ -1,5 +1,5 @@
 import styles from "@/styles/components/Hamburger.module.css";
-import { MouseEvent, useState } from "react";
+import { MouseEvent } from "react";
 
 type ButtonProps = {
   label: string;
