@@ -39,3 +39,8 @@
   margin-bottom: 5px;
   color: var(--sidenav-index);
 }
+
+.resume {
+  display: block;
+  margin: 1.5rem auto 0;
+}

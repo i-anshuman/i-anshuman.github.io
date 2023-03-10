@@ -5,12 +5,13 @@ import portfolio from "@/portfolio.json";
 
 type SidenavProps = {
   open: boolean;
+  children: JSX.Element;
 };
 
 const appear: Variants = {
   open: {
     opacity: 1,
-    clipPath: `circle(1000px at calc(100% - 70px) 50px)`,
+    clipPath: `circle(1200px at calc(100% - 70px) 50px)`,
     transition: {
       duration: 0.5,
     },
@@ -24,22 +25,26 @@ const appear: Variants = {
   },
 };
 
-const spread: Variants = {
+const fadeIn: Variants = {
   open: {
-    clipPath: `circle(1000px at calc(100% - 70px) 50px)`,
+    x: 0,
+    opacity: 1,
     transition: {
       duration: 0.5,
+      delay: 0.6
     },
   },
   closed: {
-    clipPath: `circle(30px at calc(100% - 65px) 50px)`,
+    x: -100,
+    opacity: 0,
     transition: {
       duration: 0.5,
+      staggerDirection: -1,
     },
   },
 };
 
-export default function Sidenav({ open }: SidenavProps) {
+export default function Sidenav({ open, children }: SidenavProps) {
   return (
     <motion.aside
       className={styles.sidenav}
@@ -48,14 +53,17 @@ export default function Sidenav({ open }: SidenavProps) {
       initial={false}
       animate={open ? "open" : "closed"}
     >
-      <motion.nav
-        className={styles.nav}
-        variants={spread}
-        initial={false}
-        animate={open ? "open" : "closed"}
-      >
+      <nav className={styles.nav}>
         <Menu links={portfolio.links} />
-      </motion.nav>
+        <motion.div
+          className={styles.resume}
+          variants={fadeIn}
+          initial={false}
+          animate={open ? "open" : "closed"}
+        >
+          {children}
+        </motion.div>
+      </nav>
     </motion.aside>
   );
 }
