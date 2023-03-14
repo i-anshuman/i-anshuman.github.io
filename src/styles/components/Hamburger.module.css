@@ -50,8 +50,15 @@
   right: 0;
 }
 
-.button:hover > .hambox > .hamburger,
-.button:hover > .hambox > .hamburger::after {
+@media (hover: hover) {
+  .button:hover > .hambox > .hamburger,
+  .button:hover > .hambox > .hamburger::after {
+    width: var(--hamburger-width);
+  }
+}
+
+.button:active > .hambox > .hamburger,
+.button:active > .hambox > .hamburger::after {
   width: var(--hamburger-width);
 }
 
