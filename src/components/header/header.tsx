@@ -11,7 +11,7 @@ import styles from "@/styles/components/Header.module.css";
 
 const scrollConfiguration = {
   initialDirection: ScrollDirection.UP,
-  thresholdPixels: 50,
+  thresholdPixels: 20,
 };
 
 type HeaderProps = {};
