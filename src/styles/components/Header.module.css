@@ -10,6 +10,7 @@
   padding: 0px 50px;
   z-index: var(--z-index-header);
   transition: var(--transition-header);
+  box-shadow: none;
 }
 
 .header[data-open="true"] {
