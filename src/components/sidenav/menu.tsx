@@ -1,6 +1,8 @@
 import { motion, Variants } from "framer-motion";
 import styles from "@/styles/components/Sidenav.module.css";
 import Link from "next/link";
+import { useContext } from "react";
+import { SidebarContext } from "@/context";
 
 type MenuProps = {
   links: { id: string; title: string }[];
@@ -33,15 +35,14 @@ const fadeIn: Variants = {
 };
 
 export default function Menu({ links }: MenuProps) {
+  const { hide } = useContext(SidebarContext);
   return (
     <motion.ol className={styles.menu} variants={appear}>
       {links.map(({ id, title }) => (
-        <motion.li
-          className={styles.menu_item}
-          key={id}
-          variants={fadeIn}
-        >
-          <Link href={id}>{title}</Link>
+        <motion.li className={styles.menu_item} key={id} variants={fadeIn}>
+          <Link href={id} onClick={hide}>
+            {title}
+          </Link>
         </motion.li>
       ))}
     </motion.ol>
