@@ -28,7 +28,7 @@
   position: relative;
   margin: 0px auto 20px;
   counter-increment: item 1;
-  font-size: clamp(var(--font-size-small), 4vw, var(--font-size-large));
+  font-size: clamp(var(--fs-md), 4vw, var(--fs-xl));
   font-family: var(--font-mono);
   color: var(--sidenav-link);
 }
