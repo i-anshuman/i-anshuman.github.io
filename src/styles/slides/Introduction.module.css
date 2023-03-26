@@ -1,0 +1,44 @@
+.greeting {
+  font-size: clamp(min(1.5rem, 20px), 4vw, max(3rem, 40px));
+  font-family: var(--font-secondary);
+  line-height: 2;
+}
+
+.fullname {
+  font-size: clamp(min(3rem, 40px), 8vw, max(5rem, 80px));
+  font-family: var(--font-decorative);
+  line-height: 1.5;
+}
+
+.tagline {
+  font-family: var(--font-mono);
+  font-size: clamp(min(1rem, 18px), 2vw, max(2rem, 25px));
+  line-height: 2;
+}
+
+.cursor {
+  position: relative;
+}
+
+.cursor::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: calc(100% + 2px);
+  height: 100%;
+  width: 4px;
+  background-color: var(--foreground);
+  animation: blink 500ms ease infinite alternate;
+  transform-origin: center;
+  transform: scale(0.65);
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
