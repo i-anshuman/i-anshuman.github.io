@@ -1,0 +1,51 @@
+.main {
+  display: block;
+}
+
+.content {
+  font-size: clamp(var(--fs-md), 3vw, var(--fs-lg));
+}
+
+.content p {
+  margin-bottom: 15px;
+}
+
+.picture {
+  position: relative;
+  max-width: 300px;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  gap: 0px 10px;
+  padding: 0px;
+  margin: 20px 0px 0px;
+  overflow: hidden;
+  list-style: none;
+}
+
+.skills > li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 40px;
+  font-family: var(--font-mono);
+  font-size: clamp(var(--fs-md), 1vw, var(--fs-lg));
+}
+
+.skills > li::before {
+  content: "╰┈➤";
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  color: var(--color-secondary);
+  font-size: var(--fs-sm);
+}
+
+@media screen and (min-width: 767.98px) {
+  .main {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 50px;
+  }
+}
