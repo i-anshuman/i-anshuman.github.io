@@ -1,4 +1,5 @@
 import Hamburger from "./hamburger";
 import DownloadResumeButton from "./download";
+import Link from "./link";
 
-export { Hamburger, DownloadResumeButton };
+export { Hamburger, DownloadResumeButton, Link };

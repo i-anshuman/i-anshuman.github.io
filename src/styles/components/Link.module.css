@@ -1,0 +1,27 @@
+.link {
+  position: relative;
+  display: inline-block;
+  color: var(--color-secondary);
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--color-secondary);
+  transition: var(--transition-button);
+}
+
+@media (hover: hover) {
+  .link:hover::after {
+    width: 100%;
+  }
+}
+
+.link:active::after {
+  width: 100%;
+}
+
