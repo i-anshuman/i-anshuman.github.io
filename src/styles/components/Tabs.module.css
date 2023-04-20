@@ -1,0 +1,121 @@
+.tablist {
+  position: relative;
+  width: max-content;
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+
+.tab {
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  position: relative;
+  transition: var(--transition-button);
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  height: var(--tab-height);
+  padding: 2px 20px 2px;
+  border-left: 2px solid var(--color-shade);
+  background-color: transparent;
+  color: var(--foreground);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  text-align: left;
+  white-space: nowrap;
+  transition: var(--transition-color);
+}
+
+.tab:not([aria-selected="true"]) {
+  color: var(--color-secondary);
+}
+
+.highlight[tabindex='0'] {
+  --tab-index: 0;
+}
+
+.highlight[tabindex='1'] {
+  --tab-index: 1;
+}
+
+.highlight[tabindex='2'] {
+  --tab-index: 2;
+}
+
+.highlight[tabindex='3'] {
+  --tab-index: 3;
+}
+
+.highlight[tabindex='4'] {
+  --tab-index: 4;
+}
+
+.highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-left: 2px solid var(--color-secondary);
+  height: var(--tab-height);
+  background-color: var(--tab-background);
+  border-radius: 1px;
+  transform: translateY(calc(var(--tab-height) * var(--tab-index)));
+  transition: var(--transition-tab);
+}
+
+.content {
+  position: relative;
+  flex-grow: 1;
+  width: 100%;
+  padding: 20px 0 0 0;
+  margin: 0;
+}
+
+.panel {
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  margin: 0;
+}
+
+.panel .title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-xxl);
+}
+
+.panel .title .link {
+  color: var(--color-secondary);
+}
+
+.duration {
+  font-size: var(--fs-sm);
+}
+
+.panel .description {
+  list-style: none;
+  margin-top: 25px;
+}
+
+.panel .description li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 40px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-md);
+}
+
+.panel .description li::before {
+  content: "╰┈➤";
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  color: var(--color-secondary);
+  font-size: var(--fs-sm);
+}
+
+@media screen and (min-width: 767.98px) {
+  .content {
+    padding: 0 0 0 20px;
+  }
+}
