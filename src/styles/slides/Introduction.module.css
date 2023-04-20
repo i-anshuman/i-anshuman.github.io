@@ -12,7 +12,7 @@
 
 .tagline {
   font-family: var(--font-mono);
-  font-size: clamp(min(1rem, 18px), 2vw, max(2rem, 25px));
+  font-size: clamp(min(1rem, 18px), 3vw, max(2rem, 25px));
   line-height: 2;
 }
 
