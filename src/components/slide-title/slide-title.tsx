@@ -1,13 +1,13 @@
 import styles from '@/styles/components/SlideTitle.module.css';
-import { Component } from 'react';
 
 type SlideTitleProps = {
-  title: string
+  title: string,
+  direction?: 'left' | 'center' | 'right';
 };
 
-export default function SlideTitle({title}: SlideTitleProps) {
+export default function SlideTitle({ title, direction }: SlideTitleProps) {
   return (
-    <h2 className={styles.slide_title}>
+    <h2 className={styles.slide_title} data-direction={direction}>
       {title}
     </h2>
   );

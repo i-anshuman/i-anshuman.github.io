@@ -4,7 +4,7 @@
   position: relative;
   margin: 10px 0px 40px;
   width: 100%;
-  font-size: clamp(var(--fs-xxl), 5vw, var(--fs-title));
+  font-size: clamp(var(--fs-xxl), 4vw, var(--fs-title));
   white-space: nowrap;
   font-family: var(--font-secondary);
 }
@@ -23,16 +23,56 @@
 .slide_title::after {
   content: "";
   display: block;
-  position: relative;
-  width: 200px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100%;
   height: 1.5px;
-  margin-left: 20px;
+  margin: 0;
+  margin-top: 5px;
   background-color: var(--color-shade);
   background-image: linear-gradient(to right, var(--color-secondary), var(--background));
 }
 
-@media screen and (min-width: 767.98px) {
+.slide_title[data-direction="center"]::after {
+  position: relative;
+  width: 300px;
+  margin: 0;
+  margin-top: 5px;
+  background-image: linear-gradient(to left, var(--background), var(--color-secondary), var(--background));
+}
+
+.slide_title[data-direction="right"]::after {
+  background-image: linear-gradient(to left, var(--color-secondary), var(--background));
+}
+
+.slide_title[data-direction="right"] {
+  flex-direction: row-reverse;
+}
+
+.slide_title[data-direction="center"] {
+  flex-direction: column;
+}
+
+.slide_title[data-direction="right"]::before {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.slide_title[data-direction="center"]::before {
+  margin: 0;
+}
+
+@media screen and (min-width: 425.98px) {
   .slide_title::after {
+    position: relative;
     width: 350px;
+    margin-top: 0;
+    margin-left: 10px;
+  }
+
+  .slide_title[data-direction="right"]::after {
+    margin: 0;
+    margin-right: 10px;
   }
 }
