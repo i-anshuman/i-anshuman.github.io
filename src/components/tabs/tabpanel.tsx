@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
 import { Job } from "@/types";
-import styles from "@/styles/components/Tabs.module.css";
 import { Link } from "../button";
+import { dateRangeToPeriod } from "@/utils";
+import styles from "@/styles/components/Tabs.module.css";
 
 type TabPanelProps = {
   content: Job;
 };
 
 export default function TabPanel({ content }: TabPanelProps) {
+  const period = dateRangeToPeriod(content.duration.from, content.duration.to);
   return (
     <motion.div role="tabpanel"
       className={styles.panel}
@@ -31,7 +33,8 @@ export default function TabPanel({ content }: TabPanelProps) {
           </Link>
         </span>
       </h3>
-      <p className={styles.duration}>{content.duration.from} <b>-</b> {content.duration.to}</p>
+      <p className={styles.duration}>
+        {content.duration.from} <b>-</b> {content.duration.to} <span>( {period} )</span></p>
       <ul className={styles.description}>
         { content.description.map((desc, idx) => <li key={idx}>{desc}</li>) }
       </ul>

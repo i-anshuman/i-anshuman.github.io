@@ -92,6 +92,10 @@
   font-size: var(--fs-sm);
 }
 
+.duration span {
+  color: var(--color-secondary);
+}
+
 .panel .description {
   list-style: none;
   margin-top: 25px;
