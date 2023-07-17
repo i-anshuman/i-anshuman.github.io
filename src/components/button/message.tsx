@@ -1,12 +1,6 @@
-import { MouseEventHandler } from "react";
 import { motion } from "framer-motion";
+import { MessageButtonProps } from "@/types";
 import styles from "@/styles/components/MessageButton.module.css"; 
-
-type MessageButtonProps = {
-  label: string;
-  children: JSX.Element;
-  onClick: MouseEventHandler<HTMLButtonElement>;
-};
 
 export default function MessageButton({ label, children, onClick, ...props }: MessageButtonProps) {
   return (

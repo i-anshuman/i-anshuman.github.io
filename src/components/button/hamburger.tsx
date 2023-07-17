@@ -1,13 +1,7 @@
+import { MenuButtonProps } from "@/types";
 import styles from "@/styles/components/Hamburger.module.css";
-import { MouseEvent } from "react";
 
-type ButtonProps = {
-  label: string;
-  open: boolean;
-  onClick: (event: MouseEvent) => void;
-};
-
-export default function Hamburger({ label, open, onClick }: ButtonProps) {
+export default function Hamburger({ label, open, onClick }: MenuButtonProps) {
   return (
     <button
       type="button"
