@@ -7,6 +7,7 @@ import { SidebarContext } from "@/context";
 import { ScrollDirection } from "@/hooks/useScrollDirection";
 import { useScrollDirection } from "@/hooks";
 import portfolio from "@/portfolio.json";
+import { HeaderProps } from "@/types";
 import styles from "@/styles/components/Header.module.css";
 
 const scrollConfiguration = {
@@ -14,7 +15,12 @@ const scrollConfiguration = {
   thresholdPixels: 20,
 };
 
-type HeaderProps = {};
+const headerClass = (scroll: number, scrollDirection: ScrollDirection): string => {
+  if(scroll === 0) return "";
+  return scrollDirection === ScrollDirection.UP
+          ? styles.header_show
+          : styles.header_hide;
+};
 
 export default function Header(props: HeaderProps) {
   const {
@@ -26,13 +32,7 @@ export default function Header(props: HeaderProps) {
 
   return (
     <header
-      className={`${styles.header} ${
-        scroll !== 0
-          ? scrollDirection === ScrollDirection.UP
-            ? styles.header_show
-            : styles.header_hide
-          : ""
-      }`}
+      className={`${styles.header} ${headerClass(scroll, scrollDirection)}`}
       data-open={open}
     >
       <nav className={styles.nav} aria-labelledby="Top Navigation">
