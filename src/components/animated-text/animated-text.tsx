@@ -1,6 +1,6 @@
-import { AnimatedTextProps } from "@/types";
 import { motion } from "framer-motion";
 import { memo, ElementType } from "react";
+import { AnimatedTextProps } from "@/types";
 
 function AnimatedText<C extends ElementType>({
   as,
@@ -8,7 +8,7 @@ function AnimatedText<C extends ElementType>({
   variants,
   ...restProps
 }: AnimatedTextProps<C>) {
-  const Component = motion(as || "span");
+  const Component = motion(as ?? "span");
   return (
     <Component {...restProps}>
       {[...children].map((char, index) => (
