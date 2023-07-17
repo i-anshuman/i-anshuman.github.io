@@ -1,0 +1,61 @@
+.field {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+.label {
+  position: absolute;
+  inset: 0.4rem 1rem;
+  background: transparent;
+  pointer-events: none;
+  transform-origin: 0 0;
+  transition: var(--transition-label);
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  outline: none;
+  background-color: var(--background);
+}
+
+.label,
+.input {
+  color: var(--foreground);
+  font-size: 1.2rem;
+  font-family: var(--font-mono);
+}
+
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label {
+  inset: -1.2rem 1rem;
+  scale: 0.8;
+  color: var(--color-primary);
+}
+
+.error {
+  position: relative;
+  display: block;
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
+  text-align: right;
+  margin-top: 0.5rem;
+  color: var(--color-secondary);
+}
+
+.field[data-shake='true'],
+.error[data-shake='true'] {
+  animation: shake 500ms infinite;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
