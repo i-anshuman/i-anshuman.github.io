@@ -1,0 +1,84 @@
+.messageform {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  background-color: var(--background);
+  color: inherit;
+  padding: 3rem 2rem;
+  border-radius: inherit;
+}
+
+.close:hover {
+  color: var(--color-secondary);
+}
+
+.form {
+  position: relative;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.controls {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  color: var(--foreground);
+}
+
+.controls button {
+  color: inherit;
+}
+
+.controls[data-position='top'] {
+  margin-top: -1.5rem;
+}
+
+.controls[data-position='bottom'] {
+  margin-bottom: -1.5rem;
+}
+
+.next {
+  position: relative;
+  transition: var(--transition-label);
+}
+
+.next i {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  opacity: 0;
+  transition: inherit;
+}
+
+.next span {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-mono);
+  transition: inherit;
+}
+
+.next:hover i {
+  opacity: 1;
+  right: 0;
+}
+
+.next:hover span {
+  margin-right: 25px;
+}
+
+@media (hover: hover) {
+  .close:hover {
+    color: var(--color-secondary);
+  }
+  .next:hover i {
+    opacity: 1;
+    right: 0;
+  }
+  .next:hover span {
+    margin-right: 25px;
+  }
+}
