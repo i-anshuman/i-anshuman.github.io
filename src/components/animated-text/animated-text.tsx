@@ -1,22 +1,26 @@
-import { motion, Variants } from "framer-motion";
-import { ComponentPropsWithoutRef, ElementType } from "react";
+import { AnimatedTextProps } from "@/types";
+import { motion } from "framer-motion";
+import { memo, ElementType } from "react";
 
-type AnimatedTextProps<C extends ElementType> = {
-  as?: C;
-  children: string;
-} & ComponentPropsWithoutRef<C>;
-
-export default function AnimatedText<C extends ElementType>({
+function AnimatedText<C extends ElementType>({
   as,
   children,
+  variants,
   ...restProps
 }: AnimatedTextProps<C>) {
   const Component = motion(as || "span");
   return (
     <Component {...restProps}>
       {[...children].map((char, index) => (
-        <motion.span key={index}>{char}</motion.span>
+        <motion.span
+          key={char}
+          {...variants?.(index)}
+        >
+          {char}
+        </motion.span>
       ))}
     </Component>
   );
-}
+};
+
+export default memo(AnimatedText) as typeof AnimatedText;
