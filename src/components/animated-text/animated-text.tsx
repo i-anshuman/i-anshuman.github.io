@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { memo, ElementType } from "react";
 import { AnimatedTextProps } from "@/types";
+import { getKey } from "@/utils";
 
 function AnimatedText<C extends ElementType>({
   as,
@@ -13,7 +14,7 @@ function AnimatedText<C extends ElementType>({
     <Component {...restProps}>
       {[...children].map((char, index) => (
         <motion.span
-          key={char}
+          key={getKey(index)}
           {...variants?.(index)}
         >
           {char}

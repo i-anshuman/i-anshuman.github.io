@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Job } from "@/types";
 import { Link } from "../button";
-import { dateRangeToPeriod } from "@/utils";
+import { dateRangeToPeriod, getKey } from "@/utils";
 import styles from "@/styles/components/Tabs.module.css";
 
 type TabPanelProps = {
@@ -36,7 +36,7 @@ export default function TabPanel({ content }: TabPanelProps) {
       <p className={styles.duration}>
         {content.duration.from} <b>-</b> {content.duration.to} <span>( {period} )</span></p>
       <ul className={styles.description}>
-        { content.description.map((desc, idx) => <li key={idx}>{desc}</li>) }
+        { content.description.map((desc, idx) => <li key={getKey(idx)}>{desc}</li>) }
       </ul>
     </motion.div>
   );

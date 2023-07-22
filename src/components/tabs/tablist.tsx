@@ -1,4 +1,5 @@
 import styles from '@/styles/components/Tabs.module.css';
+import { getKey } from '@/utils';
 import { ReactNode } from 'react';
 
 type TabListProps = {
@@ -37,7 +38,7 @@ export default function TabList({ tabs, tabIndex, onClick }: TabListProps) {
         tabs.map((tab, idx) => (
           <TabButton selected={idx === tabIndex}
             controls={tab}
-            key={idx}
+            key={getKey(idx)}
             index={idx}
             onClick={onClick}
           >
