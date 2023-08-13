@@ -2,12 +2,10 @@ import { useState } from "react";
 import TabList from "./tablist";
 import TabPanel from "./tabpanel";
 import { AnimatePresence } from "framer-motion";
-import { Job } from "@/types";
+import { TabProps } from "@/types";
 import styles from "@/styles/components/Tabs.module.css";
 
-type TabProps = {
-  tabs: Job[];
-};
+
 
 export default function Tab({ tabs }: TabProps) {
   const [tabIndex, setTabIndex] = useState<number>(0);

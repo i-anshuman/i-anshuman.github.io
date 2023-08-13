@@ -1,20 +1,6 @@
-import styles from '@/styles/components/Tabs.module.css';
 import { getKey } from '@/utils';
-import { ReactNode } from 'react';
-
-type TabListProps = {
-  tabs: string[];
-  tabIndex: number;
-  onClick: (idx: number) => void;
-};
-
-type TabButtonProps = {
-  children: ReactNode;
-  controls: string;
-  selected: boolean;
-  index: number;
-  onClick: (idx: number) => void;
-};
+import { TabListProps, TabButtonProps } from '@/types';
+import styles from '@/styles/components/Tabs.module.css';
 
 function TabButton({ children, controls, selected, index, onClick }: TabButtonProps) {
   return (

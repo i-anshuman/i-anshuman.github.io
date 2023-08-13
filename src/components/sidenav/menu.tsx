@@ -1,12 +1,9 @@
-import { motion, Variants } from "framer-motion";
-import styles from "@/styles/components/Sidenav.module.css";
 import Link from "next/link";
+import { motion, Variants } from "framer-motion";
 import { useContext } from "react";
 import { SidebarContext } from "@/context";
-
-type MenuProps = {
-  links: { id: string; title: string }[];
-};
+import { MenuProps } from "@/types";
+import styles from "@/styles/components/Sidenav.module.css";
 
 const appear: Variants = {
   open: {

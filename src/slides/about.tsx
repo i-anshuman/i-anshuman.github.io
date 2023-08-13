@@ -2,8 +2,10 @@ import SlideTitle from "@/components/slide-title";
 import slides from "@/styles/slides/Slides.module.css";
 import about from "@/styles/slides/About.module.css";
 import portfolio from "@/portfolio.json";
+import { SlideProps } from "@/types";
 
-export default function About({ id }: { id: string }) {
+
+export default function About({ id }: SlideProps) {
   return (
     <section className={slides.slide} id={id}>
       <SlideTitle title="About Me" />

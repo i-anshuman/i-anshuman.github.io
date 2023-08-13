@@ -1,9 +1,6 @@
 import styles from "@/styles/components/Loader.module.css";
 import { AnimatePresence, motion, Variants } from "framer-motion";
-
-type LoaderProps = {
-  show: boolean;
-};
+import { LoaderProps } from "@/types";
 
 const outline: Variants = {
   hidden: {
@@ -33,8 +30,7 @@ const initial: Variants = {
   }),
 };
 
-export default function Loader({show}: LoaderProps): JSX.Element {
-
+export default function Loader({ show }: LoaderProps): JSX.Element {
   return (
     <AnimatePresence mode="wait">
       {show && (

@@ -1,12 +1,8 @@
-import styles from "@/styles/components/Sidenav.module.css";
 import { motion, Variants } from "framer-motion";
+import { SidenavProps } from "@/types";
 import Menu from "./menu";
 import portfolio from "@/portfolio.json";
-
-type SidenavProps = {
-  open: boolean;
-  children: JSX.Element;
-};
+import styles from "@/styles/components/Sidenav.module.css";
 
 const appear: Variants = {
   open: {
