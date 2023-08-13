@@ -3,16 +3,27 @@ import slides from "@/styles/slides/Slides.module.css";
 import about from "@/styles/slides/About.module.css";
 import portfolio from "@/portfolio.json";
 import { SlideProps } from "@/types";
-
+import StringTemplate from "@/components/string-template";
+import { Link } from "@/components/button";
 
 export default function About({ id }: SlideProps) {
+
   return (
     <section className={slides.slide} id={id}>
       <SlideTitle title="About Me" />
       <div className={about.main}>
         <div className={about.content}>
           <div>
-            { portfolio.about.map((line, idx) => <p key={idx}>{line}</p>) }
+            {
+              portfolio.about.map((line, idx) => (
+                <p key={idx}>
+                  <StringTemplate
+                    text={line}
+                    component={Link}
+                  />
+                </p>
+              ))
+            }
           </div>
           <ul className={about.skills}>
             { portfolio.skills.map((skill, idx) => <li key={idx}>{skill}</li>) }
