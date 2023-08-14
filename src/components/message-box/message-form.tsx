@@ -10,6 +10,11 @@ const fadeIn: Variants = {
   hide: { opacity: 0, x: -20, transition: { duration: 0.5 } },
 };
 
+const appear = (display: string): Variants => ({
+  show: { opacity: 1, y: 0, display, transition: { duration: 0.5 } },
+  hide: { opacity: 0, y: -100, display: 'none', transition: { duration: 0.5 } },
+});
+
 export default function MessageForm({ onClose }: MessageFormProps) {
   const [index, setIndex] = useState<number>(0);
   const [shake, setShake] = useState<boolean>(false);
@@ -19,6 +24,7 @@ export default function MessageForm({ onClose }: MessageFormProps) {
     email: "",
     message: ""
   });
+  const [sending, setSending] = useState<boolean>(false);
 
   const handleError = () => {
     if (error || !message[structure[index].name]) {
@@ -47,7 +53,7 @@ export default function MessageForm({ onClose }: MessageFormProps) {
 
   const handleSend: MouseEventHandler<HTMLButtonElement> = (event) => {
     if(handleError()) return;
-    alert("Sending message");
+    setSending(true);
   };
 
   return (
@@ -66,7 +72,7 @@ export default function MessageForm({ onClose }: MessageFormProps) {
         <motion.button
           variants={fadeIn}
           initial="hide"
-          animate={(index > 0) ? "show" : "hide"}
+          animate={(index > 0 && !sending) ? "show" : "hide"}
           type="button"
           aria-label="Previous"
           onClick={handlePrevious}
@@ -74,7 +80,12 @@ export default function MessageForm({ onClose }: MessageFormProps) {
           <i className="fa-solid fa-chevron-left fa-xl"></i>
         </motion.button>
       </div>
-      <div className={styles.form}>
+      <motion.div
+        className={styles.form}
+        variants={appear("block")}
+        initial="hide"
+        animate={!sending ? "show" : "hide"}
+      >
         <InputField
           id={structure[index].id}
           name={structure[index].name}
@@ -93,8 +104,14 @@ export default function MessageForm({ onClose }: MessageFormProps) {
           error={error}
           shake={shake}
         />
-      </div>
-      <div className={styles.controls} data-position="bottom">
+      </motion.div>
+      <motion.div
+        className={styles.controls}
+        data-position="bottom"
+        variants={appear("flex")}
+        initial="hide"
+        animate={!sending ? "show" : "hide"}
+      >
         <button
           type="button"
           aria-label={(index === structure.length - 1) ? "Send message" : "Next"}
@@ -117,7 +134,15 @@ export default function MessageForm({ onClose }: MessageFormProps) {
             )
           }
         </button>
-      </div>
+      </motion.div>
+      <motion.div
+        variants={appear("block")}
+        initial="hide"
+        animate={sending ? "show" : "hide"}
+      >
+        <h1>Thanks, {message.name}</h1>
+        <p>Your message has been sent successfully. I&apos;ll be in touch soon.</p>
+      </motion.div>
     </motion.div>
   );
 };
