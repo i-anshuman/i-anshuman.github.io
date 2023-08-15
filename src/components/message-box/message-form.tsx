@@ -2,7 +2,7 @@ import { MouseEventHandler, useState } from "react";
 import { Variants, motion } from "framer-motion";
 import InputField from "../input-field";
 import structure from "./structure";
-import { MessageStructure as Message, MessageFormProps } from "@/types";
+import { MessageStructure as Message, MessageFormProps, RequestStatus } from "@/types";
 import styles from "@/styles/components/MessageForm.module.css";
 
 const fadeIn: Variants = {
@@ -24,7 +24,7 @@ export default function MessageForm({ onClose }: MessageFormProps) {
     email: "",
     message: ""
   });
-  const [sending, setSending] = useState<boolean>(false);
+  const [requestStatus, setRequestStatus] = useState<RequestStatus>(RequestStatus.NOT_SENT);
 
   const handleError = () => {
     if (error || !message[structure[index].name]) {
@@ -53,7 +53,7 @@ export default function MessageForm({ onClose }: MessageFormProps) {
 
   const handleSend: MouseEventHandler<HTMLButtonElement> = (event) => {
     if(handleError()) return;
-    setSending(true);
+    setRequestStatus(RequestStatus.SENDING);
   };
 
   return (
@@ -72,7 +72,7 @@ export default function MessageForm({ onClose }: MessageFormProps) {
         <motion.button
           variants={fadeIn}
           initial="hide"
-          animate={(index > 0 && !sending) ? "show" : "hide"}
+          animate={(index > 0 && requestStatus === RequestStatus.NOT_SENT) ? "show" : "hide"}
           type="button"
           aria-label="Previous"
           onClick={handlePrevious}
@@ -84,7 +84,7 @@ export default function MessageForm({ onClose }: MessageFormProps) {
         className={styles.form}
         variants={appear("block")}
         initial="hide"
-        animate={!sending ? "show" : "hide"}
+        animate={requestStatus === RequestStatus.NOT_SENT ? "show" : "hide"}
       >
         <InputField
           id={structure[index].id}
@@ -110,7 +110,7 @@ export default function MessageForm({ onClose }: MessageFormProps) {
         data-position="bottom"
         variants={appear("flex")}
         initial="hide"
-        animate={!sending ? "show" : "hide"}
+        animate={requestStatus === RequestStatus.NOT_SENT ? "show" : "hide"}
       >
         <button
           type="button"
@@ -138,7 +138,7 @@ export default function MessageForm({ onClose }: MessageFormProps) {
       <motion.div
         variants={appear("block")}
         initial="hide"
-        animate={sending ? "show" : "hide"}
+        animate={requestStatus !== RequestStatus.NOT_SENT ? "show" : "hide"}
       >
         <h1>Thanks, {message.name}</h1>
         <p>Your message has been sent successfully. I&apos;ll be in touch soon.</p>
