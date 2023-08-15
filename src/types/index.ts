@@ -20,6 +20,7 @@ import TabProps from "./tab-props";
 import TabListProps from "./tablist-props";
 import TabButtonProps from "./tab-button-props";
 import SlideProps from "./slide-props";
+import RequestStatus from "./request-status";
 
 export type {
   Job,
@@ -45,3 +46,5 @@ export type {
   TabButtonProps,
   SlideProps
 };
+
+export { RequestStatus };
