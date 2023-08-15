@@ -1,0 +1,63 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.message {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--fs-lg);
+  margin-bottom: 40px;
+}
+
+.messagebox {
+  position: relative;
+  border-radius: 0.5rem;
+  background: var(--background);
+  color: var(--foreground);
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+}
+
+.messagebox > div {
+  border-radius: inherit;
+}
+
+.messagebox::before,
+.messagebox::after {
+  content: "";
+  position: absolute;
+  inset: -0.15rem;
+  border-radius: inherit;
+  background-color: var(--color-secondary);
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--loader-neon-4),
+    var(--loader-neon-5),
+    var(--color-primary),
+    var(--loader-neon-5),
+    var(--loader-neon-4)
+  );
+  animation: rotation 10s linear infinite;
+  z-index: -1;
+}
+
+.messagebox::after {
+  filter: blur(0.5rem);
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 90deg;
+  inherits: false;
+}
+
+@keyframes rotation {
+  0% { --gradient-angle: 0deg; }
+  100% { --gradient-angle: 360deg; }
+}
