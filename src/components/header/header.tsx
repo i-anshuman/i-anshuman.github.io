@@ -44,7 +44,7 @@ export default function Header(props: HeaderProps) {
           <DownloadResumeButton
             label="Download Resume"
             title="Resume"
-            href={portfolio.social.resume}
+            href={portfolio.resume}
           />
         </div>
         <div className={styles.nav__menu__drawer}>
@@ -53,7 +53,7 @@ export default function Header(props: HeaderProps) {
             <DownloadResumeButton
               label="Download Resume"
               title="Resume"
-              href={portfolio.social.resume}
+              href={portfolio.resume}
             />
           </Sidenav>
         </div>
