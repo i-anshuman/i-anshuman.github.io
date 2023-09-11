@@ -20,6 +20,7 @@ import TabProps from "./tab-props";
 import TabListProps from "./tablist-props";
 import TabButtonProps from "./tab-button-props";
 import SlideProps from "./slide-props";
+import SocialButtonProps from "./social-button-props";
 import RequestStatus from "./request-status";
 
 export type {
@@ -44,7 +45,8 @@ export type {
   TabProps,
   TabListProps,
   TabButtonProps,
-  SlideProps
+  SlideProps,
+  SocialButtonProps
 };
 
 export { RequestStatus };
