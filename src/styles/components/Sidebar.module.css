@@ -1,0 +1,21 @@
+.sidebar {
+  position: fixed;
+  bottom: 0;
+  width: 40px;
+  z-index: var(--z-index-sidebar);
+}
+
+.sidebar[data-alignment="left"] {
+  left: 20px;
+  right: auto;
+}
+
+.sidebar[data-alignment="right"] {
+  left: auto;
+  right: 20px;
+}
+
+.sidebar[data-alignment="center"] {
+  left: 50%;
+  right: 50%;
+}

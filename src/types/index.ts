@@ -21,7 +21,9 @@ import TabListProps from "./tablist-props";
 import TabButtonProps from "./tab-button-props";
 import SlideProps from "./slide-props";
 import SocialButtonProps from "./social-button-props";
+import SidebarProps from "./sidebar-props";
 import RequestStatus from "./request-status";
+import Alignment from "./alignment";
 
 export type {
   Job,
@@ -46,7 +48,8 @@ export type {
   TabListProps,
   TabButtonProps,
   SlideProps,
-  SocialButtonProps
+  SocialButtonProps,
+  SidebarProps
 };
 
-export { RequestStatus };
+export { RequestStatus, Alignment };
