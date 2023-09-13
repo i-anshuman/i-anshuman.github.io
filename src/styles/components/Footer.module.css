@@ -1,0 +1,32 @@
+.footer {
+  background: var(--background);
+  color: var(--foreground);
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.social {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.note {
+  text-align: center;
+}
+
+.note i {
+  color: var(--color-heart);
+}
+
+.note span {
+  font-weight: 500;
+}
+
+@media screen and (min-width: 767.98px) {
+  .social {
+    display: none;
+  }
+}
