@@ -9,8 +9,15 @@
 }
 
 .social {
+  position: relative;
+  list-style: none;
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 1.2rem;
+}
+
+.social li {
+  text-align: center;
+  padding: 1.2rem;
 }
 
 .note {
@@ -25,8 +32,69 @@
   font-weight: 500;
 }
 
+.container {
+  display: block;
+}
+
+.sidebar {
+  display: none;
+}
+
+.email {
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-label);
+}
+
+.email a {
+  font-family: var(--font-mono);
+  font-size: var(--fs-md);
+  margin-bottom: 2rem;
+  writing-mode: vertical-rl;
+  letter-spacing: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: inherit;
+}
+
+.email a:hover {
+  color: var(--color-secondary);
+  transform: translateY(-0.5rem);
+}
+
+@media (hover: hover) {
+  .email a:hover {
+    color: var(--color-secondary);
+    transform: translateY(-0.5rem);
+  }
+}
+
 @media screen and (min-width: 767.98px) {
   .social {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  .social li {
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .line::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 5rem;
+    background: var(--color-heart);
+    margin: 0 auto;
+  }
+
+  .container {
     display: none;
+  }
+
+  .sidebar {
+    display: block;
   }
 }
