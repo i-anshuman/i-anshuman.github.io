@@ -4,19 +4,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.2rem;
-  padding-bottom: 1.5rem;
   transition: var(--transition-label);
 }
 
 .social i {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   transition: inherit;
 }
 
 .social span {
   position: absolute;
-  bottom: 15%;
+  transform: translateY(0.8rem);
   opacity: 0;
   font-size: 0.8rem;
   white-space: nowrap;
@@ -28,9 +26,13 @@
   color: var(--color-secondary);
 }
 
+.social:hover i {
+  transform: translateY(-0.5rem);
+}
+
 .social:hover span {
   opacity: 1;
-  bottom: -5%;
+  transform: translateY(1.8rem);
 }
 
 @media (hover: hover) {
@@ -41,6 +43,16 @@
 
   .social:hover span {
     opacity: 1;
-    bottom: -5%;
+    transform: translateY(1.8rem);
+  }
+
+  .social:hover i {
+    transform: translateY(-0.5rem);
+  }
+}
+
+@media screen and (min-width: 767.98px) {
+  .social span {
+    display: none;
   }
 }
