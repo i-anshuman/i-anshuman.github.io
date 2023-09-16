@@ -24,6 +24,7 @@ import SocialButtonProps from "./social-button-props";
 import SidebarProps from "./sidebar-props";
 import RequestStatus from "./request-status";
 import Alignment from "./alignment";
+import Orientation from "./orientation";
 
 export type {
   Job,
@@ -52,4 +53,4 @@ export type {
   SidebarProps
 };
 
-export { RequestStatus, Alignment };
+export { RequestStatus, Alignment, Orientation };

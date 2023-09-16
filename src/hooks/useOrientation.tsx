@@ -1,11 +1,8 @@
+import { Orientation } from "@/types";
 import { useEffect, useState } from "react";
 
-enum Orientation {
-  PORTRAIT, LANDSCAPE
-};
-
 export default function useOrientation() {
-  const [orientation, setOrientation] = useState<number>(screen.orientation.angle);
+  const [orientation, setOrientation] = useState<number>(0);
 
   useEffect(() => {
     const handler = () => setOrientation(screen.orientation.angle);
