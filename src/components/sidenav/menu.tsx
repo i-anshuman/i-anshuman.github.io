@@ -35,13 +35,17 @@ export default function Menu({ links }: MenuProps) {
   const { hide } = useContext(SidebarContext);
   return (
     <motion.ol className={styles.menu} variants={appear}>
-      {links.map(({ id, title }) => (
-        <motion.li className={styles.menu_item} key={id} variants={fadeIn}>
-          <Link href={id} onClick={hide}>
-            {title}
-          </Link>
-        </motion.li>
-      ))}
+      {
+        links
+        .filter(({ hidden }) => !hidden )
+        .map(({ id, title }) => (
+          <motion.li className={styles.menu_item} key={id} variants={fadeIn}>
+            <Link href={id} onClick={hide}>
+              {title}
+            </Link>
+          </motion.li>
+        ))
+      }
     </motion.ol>
   );
 }
