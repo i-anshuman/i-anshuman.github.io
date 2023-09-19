@@ -1,0 +1,11 @@
+.container {
+  position: relative;
+  z-index: var(--z-index-container);
+  transition: var(--transition-blur);
+}
+
+.container[data-open="true"] {
+  filter: blur(var(--bluriness)) grayscale(1);
+  height: 100vh;
+  overflow: hidden;
+}

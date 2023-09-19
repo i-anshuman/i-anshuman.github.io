@@ -6,6 +6,7 @@ import Document, {
   DocumentContext,
   DocumentInitialProps,
 } from "next/document";
+import Script from "next/script";
 
 export default class PortfolioDocument extends Document {
   static async getInitialProps(
@@ -20,13 +21,22 @@ export default class PortfolioDocument extends Document {
       <Html lang="en">
         <Head prefix="profile: https://ogp.me/ns/profile#">
           <meta charSet="utf-8" />
-          <meta httpEquiv="x-ua-compatible" content="ie=edge"/>
+          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
           <meta
             name="robots"
             content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
           />
           <meta name="color-scheme" content="dark light" />
-          <meta name="theme-color" content="#000000" />
+          <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="#252627"
+          />
+          <meta
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content="#f7accfff"
+          />
           <meta name="author" content="Anshuman Gupta" />
           <meta name="description" content="Anshuman's Portfolio" />
           <meta
@@ -66,17 +76,19 @@ export default class PortfolioDocument extends Document {
             crossOrigin="anonymous"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Bitter&family=Pacifico&family=Raleway&family=Source+Code+Pro&family=Tourney:wght@300&display=swap"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Pacifico&family=Poppins:wght@700&family=Raleway&family=Source+Code+Pro&display=swap"
             rel="stylesheet"
           />
         </Head>
         <body>
           <Main />
           <NextScript />
+          <Script
+            type="text/javascript"
+            src="https://kit.fontawesome.com/6c31e5f18a.js"
+            strategy="lazyOnload"
+            crossOrigin="anonymous"
+          />
         </body>
       </Html>
     );
