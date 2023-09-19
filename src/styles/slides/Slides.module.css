@@ -1,4 +1,5 @@
 .slide {
+  position: relative;
   padding: 0;
   width: 100%;
   min-height: 100vh;
@@ -7,4 +8,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
+
+.slide:not(:first-child) {
+  padding: 100px 0;
 }
