@@ -1,0 +1,91 @@
+{
+  "fullname": "Anshuman Gupta",
+  "firstname": "Anshuman",
+  "lastname": "Gupta",
+  "tagline": "<Full Stack Developer />",
+  "bio": "I build things out of code.",
+  "location": {
+    "city": "Pune",
+    "state": "Maharashtra",
+    "country": "India",
+    "stateCode": "MH",
+    "countryCode": "IN"
+  },
+  "contact": {
+    "email": "anshuman844@gmail.com"
+  },
+  "resume": "#resume",
+  "social": [
+    {
+      "title": "Github",
+      "url": "https://github.com/i-anshuman",
+      "username": "i-anshuman",
+      "icon": "fa-brands fa-github"
+    },
+    {
+      "title": "LinkedIn",
+      "url": "https://www.linkedin.com/in/iAnshumanGupta/",
+      "username": "iAnshumanGupta",
+      "icon": "fa-brands fa-linkedin"
+    },
+    {
+      "title": "Codepen",
+      "url": "https://codepen.io/ianshuman",
+      "username": "ianshuman",
+      "icon": "fa-brands fa-codepen"
+    },
+    {
+      "title": "Twitter",
+      "url": "https://twitter.com/_AnshumanGupta",
+      "username": "_AnshumanGupta",
+      "icon": "fa-brands fa-x-twitter"
+    },
+    {
+      "title": "Anshuman's Blog",
+      "url": "https://blog.anshuman.in",
+      "username": "anshumang",
+      "icon": "fa-solid fa-blog"
+    },
+    {
+      "title": "Instagram",
+      "url": "https://www.instagram.com/__ans_human/",
+      "username": "__ans_human",
+      "icon": "fa-brands fa-instagram",
+      "hidden": true
+    }
+  ],
+  "links": [
+    { "title": "About", "id": "#about" },
+    { "title": "Experience", "id": "#jobs" },
+    { "title": "Works", "id": "#projects", "hidden": true },
+    { "title": "Contact", "id": "#contact" }
+  ],
+  "about": [
+    "Greetings! I'm Anshuman, and my passion lies in crafting digital experiences on the web. It all began during the summer of 2014 when I embarked on a journey to explore the world of programming. Little did I know that this endeavor would provide me with a platform to transform my imaginative ideas into tangible realities.",
+    "Moving forward to the present day, I have the privilege of being a part of The [Centre for Development of Advanced Computing](https://www.cdac.in), an esteemed autonomous scientific society operating under MeitY, the Government of India. Here, I contribute as a valuable member of a team dedicated to the development of systems that have a direct and meaningful impact on the lives of people in our society.",
+    "Currently, my primary focus revolves around acquiring proficiency in system design and constructing scalable, user-friendly systems. I am enthusiastic about enhancing my skills in this area, as it allows me to create solutions that can accommodate growing demands while ensuring accessibility for all.",
+    "These are some of the technologies I have recently been actively engaged with:"
+  ],
+  "skills": [ "Java(8+)", "Spring Boot", "Hibernate", "PL/SQL", "JavaScript", "ReactJS" ],
+  "jobs": [
+    {
+      "role": "Project Engineer",
+      "company": {
+        "title": "CDAC",
+        "url": "https://www.cdac.in/"
+      },
+      "duration": {
+        "from": "October, 2021",
+        "to": "Present"
+      },
+      "description": [
+        "Formulated accounting procedures for the Account Management System (AMS), a project implemented by PWD Maharashtra.",
+        "Created RESTful web services enabling the submission of bill details from AMS to the treasury for payment processing.",
+        "Designed a graphical dashboard for AMS, presenting work and bill details along with their respective stages. This visualization aids officials in decision-making and planning processes.",
+        "Identified and analyzed reported issues, provided recommendations, and implemented effective solutions.",
+        "Conducted thorough testing and debugging, leveraging script tools and coding to align with design specifications."
+      ]
+    }
+  ],
+  "message": "I am currently open to new opportunities and available to connect. Feel free to reach out for job openings, questions, or just to say hello, and I'll strive to respond as soon as possible."
+}
