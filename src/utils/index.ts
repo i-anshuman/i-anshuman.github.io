@@ -8,3 +8,9 @@ export const dateRangeToPeriod = (from: string, to: string): string => {
   period += months ? `${period ? ' and ' : ''}${months} month${months > 1 ? 's' : ''}` : '';
   return period;
 };
+
+export const getKey = (base: number): string => {
+  const random = Math.floor(Math.random() * 1000);
+  const timestamp = Date.now();
+  return `${base}-${random}-${timestamp}`;
+};
