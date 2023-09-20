@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { Inter } from "@next/font/google";
 import { Loader } from "@/components/loader";
 import { SidebarContext } from "@/context";
+import { Analytics } from "@/components/analytics";
 import portfolio from "@/portfolio.json";
 import styles from "@/styles/Home.module.css";
 
@@ -26,6 +27,7 @@ export default function Home() {
       <div className={styles.container} data-open={open}>
         <Portfolio  />
       </div>
+      <Analytics />
     </>
   );
 }
